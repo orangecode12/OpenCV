@@ -1,0 +1,14 @@
+opencv-python #pip install opencv-python-headless
+numpy
+matplotlib
+scipy
+TensorFlow
+Torch
+Keras
+Scikit-learn 
+cmake
+dlib
+autopep8
+ffmpeg
+plotly.express
+nbformat
