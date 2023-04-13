@@ -13,20 +13,22 @@ coordinates_arr = np.array([[0,0,0,0,0]]) # № кадра, x1, y1, x2, y2
 i = 0 # № кадра
 
 # установить позицию кадра
-cap.set(cv2.CAP_PROP_POS_FRAMES, 1237) # пример для чтения 50-го кадра
+cap.set(cv2.CAP_PROP_POS_FRAMES, 1255) # пример для чтения 50-го кадра
 
 # прочитать первый кадр из видео
 ret, img = cap.read()
 
 #while ret:
-while i < 2:
+while i < 30:
     # поиск зрачков
     # кадр в черно-белое изображение для облегчения поиска контуров
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cv2.imwrite('images/gray.jpg', gray)  
 
 
     # бинаризовать изображение с помощью порогового значения
     thresh = cv2.threshold(gray,85, 255, cv2.THRESH_BINARY)[1]
+    cv2.imwrite('images/thresh.jpg', thresh)  
 
     # удалить шум на изображении с помощью медианного фильтра
     thresh = cv2.medianBlur(thresh, 5)
